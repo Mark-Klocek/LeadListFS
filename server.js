@@ -21,6 +21,7 @@ MongoClient.connect(connectString)
             .then(results =>{
                 console.log(results)
             })
+            
         //after db connection returning main index
         app.get('/',(request,response)=>{
         response.sendFile(__dirname + '/index.html')
