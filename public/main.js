@@ -500,3 +500,6 @@ const businessList = [
     "Business Address": "491 Sage Rd N Ste 200 White House, TN 37188"
   }
 ]
+businessList.forEach((element,_)=>{
+    console.log(element)
+})
