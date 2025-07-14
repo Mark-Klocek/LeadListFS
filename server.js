@@ -18,9 +18,7 @@ MongoClient.connect(connectString)
         const db = client.db('LeadLis')
         const businessCollection = db.collection('1')
         const businessArray = businessCollection.find().toArray()
-            .then(results =>{
-                console.log(results)
-            })
+            
             
         //after db connection returning main index
         app.get('/',(request,response)=>{
