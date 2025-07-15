@@ -14,6 +14,14 @@ app.use(express.json())
 app.get('/',(request,response)=>{
     response.sendFile(__dirname + '/index.html')
 })
+app.get('/render',(request,response)=>{
+    response.render('index.ejs',{})
+})
+
+
+
+
+
 
 
 
