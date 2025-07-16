@@ -15,7 +15,7 @@
 	<body>
 		<h1>LeastlistFS</h1>
 		<h2>we're rendering!</h2>
-		<button type="button">Populate me!</button>
+		<!-- <button type="button">Populate me!</button> -->
 		<form action="/addBusiness" method="POST">
 			<input type="text" placeholder="business name" name="businessName">
 			<input type="text" placeholder="phone number" name="businessPhone">
@@ -25,19 +25,28 @@
 
 		
 		<div id="listingsBox">
-			<ul class="businesses">
-				
+			<table id="businessTable">
+				<tr id="headers">
+					<th>Business Counter</th>
+					<th>Business Name</th>
+					<th>Business Phone</th>
+					<th>Business Address</th>
+					
+				</tr>
 				<% for(let i = 0; i< businesses.length;i++) {%> 
-					<li class = "business">
-						<span>test</span>
-						<span><%= businesses[i]['Business Name'] %></span>
-						<span><%= businesses[i]['Business Phone'] %></span>
-						<span><%= businesses[i]['Business Address'] %></span>
+					<% if (i !== 0) {%>
+					<tr class = "business">
+						<td><%= i %></td>
+						<td><%= businesses[i]['Business Name'] %></td>
+						<td><%= businesses[i]['Business Phone'] %></td>
+						<td><%= businesses[i]['Business Address'] %></td>
 
-					</li>
+					</tr>
+						<%}
+					%>
 					<%}
 				%>
-			</ul>
+			</table>
 		</div>
 		<script type="text/javascript" src="/main.js"></script>
 	</body>

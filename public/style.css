@@ -33,9 +33,17 @@ body {
 #listingsBox{
   max-height: 1200px;
   width: 75%;
-  background-color: rgb(230, 59, 59);
-  text-align: center;
+  
+  display: flex;
   overflow: scroll;
+  justify-content: center;
+}
+table, th, td {
+  border:1px solid black;
+  
+}
+table{
+  display: flex;
 }
 ul{
   list-style: none;
