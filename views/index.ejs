@@ -24,7 +24,18 @@
 		</form>
 
 		
-		<div id="listingsBox"></div>
+		<div id="listingsBox">
+			<ul class="businesses">
+				<% for(let i = 0; i< businesses.length;i++) 
+					<li class = "business">
+						<span>businesses['Business Name']</span>
+						<span>businesses['Business Phone']</span>
+
+					</li>
+				
+				%>
+			</ul>
+		</div>
 		<script type="text/javascript" src="/main.js"></script>
 	</body>
 </html>
