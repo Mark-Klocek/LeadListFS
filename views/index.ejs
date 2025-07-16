@@ -26,13 +26,16 @@
 		
 		<div id="listingsBox">
 			<ul class="businesses">
-				<% for(let i = 0; i< businesses.length;i++) 
+				
+				<% for(let i = 0; i< businesses.length;i++) {%> 
 					<li class = "business">
-						<span>businesses['Business Name']</span>
-						<span>businesses['Business Phone']</span>
+						<span>test</span>
+						<span><%= businesses[i]['Business Name'] %></span>
+						<span><%= businesses[i]['Business Phone'] %></span>
+						<span><%= businesses[i]['Business Address'] %></span>
 
 					</li>
-				
+					<%}
 				%>
 			</ul>
 		</div>

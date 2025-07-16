@@ -4,7 +4,7 @@ require('dotenv').config()
 const PORT = process.env.PORT || 8000;
 const connectString = process.env.connectString
 const MongoClient = require('mongodb').MongoClient
-let businessArray = null
+let db = null
 app.set('view engine','ejs')
 
 app.use(express.static('public'))
@@ -18,8 +18,16 @@ app.get('/',(request,response)=>{
     response.sendFile(__dirname + '/index.html')
 })
 app.get('/businessList',(request,response)=>{
-    console.log(businessArray)
-    response.render('index.ejs',{businesses: businessArray})
+    db.collection('1')
+        .find()
+        .toArray()
+        .then(results =>{
+            console.log(results)
+            response.render('index.ejs',{businesses: results})
+        })
+    
+        
+    
 })
 
 
@@ -30,9 +38,8 @@ MongoClient.connect(connectString)
     //after db connection
     .then( client =>{
         console.log('connected to mongodb')
-        const db = client.db('LeadLis')
-        const businessCollection = db.collection('1')
-        businessArray = businessCollection.find().toArray()
+        db = client.db('LeadLis')
+        
         app.listen(PORT,()=>{
         console.log(`Server is running on port ${PORT}`)
         })
