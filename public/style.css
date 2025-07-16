@@ -1,7 +1,7 @@
 /* Box Model Hack */
 * {
   box-sizing: border-box;
-  font-family: 'roboto';
+  font-family: 'roboto',sans-serif,helvetica;
 }
 
 /* Clear fix hack */
@@ -39,7 +39,7 @@ body {
   overflow: scroll;
   justify-content: center;
 }
-table, th, td {
+th, td {
   border:1px solid black;
   
 }
