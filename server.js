@@ -32,7 +32,7 @@ app.get('/businessList',(request,response)=>{
 app.post('/addBusiness',(request,response)=>{
     db.collection('1').insertOne({
         'Business Name': request.body._businessName,
-        'Business Phone': request.body._businessPhone,
+        'Business Phone': Number(request.body._businessPhone),
         'Business Address': request.body._businessAddress
     })
     .then(result =>{
