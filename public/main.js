@@ -36,5 +36,10 @@ async function deleteBusiness(){
     }
 }
 function editWindow(){
-    console.log(this.childNodes[2].style.visibility = 'visible')
+    const editWindows = document.querySelectorAll('.editWindow')
+    editWindows.forEach(element => {
+        element.style.visibility = 'hidden'
+    })
+    this.childNodes[2].style.visibility = 'visible'
+    
 }
