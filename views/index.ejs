@@ -35,17 +35,16 @@
 					
 				</tr>
 				<% for(let i = 0; i< businesses.length;i++) {%> 
-					<% if (i !== 0) {%>
+					
 					<tr class = "business">
-						<td><%= i %></td>
+						<td><%= i+1 %></td>
 						<td><%= businesses[i]['Business Name'] %></td>
 						<td><%= businesses[i]['Business Phone'] %></td>
 						<td><%= businesses[i]['Business Address'] %></td>
 						<td><span class='fa fa-trash'></span></td>
 
 					</tr>
-						<%}
-					%>
+					
 					<%}
 				%>
 			</table>
