@@ -74,3 +74,14 @@ footer {
 .tooltip:hover .toolTipText{
   visibility: visible;
 }
+.editWindow{
+  visibility: hidden;
+  position:absolute;
+  z-index: 1;
+  height: 25%;
+  width: 50%;
+  background-color: grey;
+  transform: translate(-110%, -20%);
+  
+
+}

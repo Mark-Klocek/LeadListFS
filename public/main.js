@@ -1,7 +1,12 @@
 const deleteButton = document.querySelectorAll('.fa-trash')
+const editButton = document.querySelectorAll('.fa-pen')
+
 
 Array.from(deleteButton).forEach((element)=>{
     element.addEventListener('click', deleteBusiness)
+})
+Array.from(editButton).forEach(element =>{
+    element.addEventListener('click',editWindow)
 })
 
 
@@ -29,4 +34,7 @@ async function deleteBusiness(){
     }catch(err){
         console.log(err)
     }
+}
+function editWindow(){
+    console.log(this.childNodes[2].style.visibility = 'visible')
 }
