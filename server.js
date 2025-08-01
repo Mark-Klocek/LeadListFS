@@ -5,8 +5,9 @@ const PORT = process.env.PORT || 8000;
 const connectString = process.env.connectString
 const MongoClient = require('mongodb').MongoClient
 let db = null
-app.set('view engine','ejs')
 
+app.set('view engine','ejs')
+app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.use(express.json())
 
@@ -27,6 +28,18 @@ app.get('/businessList',(request,response)=>{
     
         
     
+})
+app.post('/addBusiness',(request,response)=>{
+    db.collection('1').insertOne({
+        'Business Name': request.body._businessName,
+        'Business Phone': request.body._businessPhone,
+        'Business Address': request.body._businessAddress
+    })
+    .then(result =>{
+        console.log(request.body)
+        response.redirect('/businessList')
+    })
+    .catch(error => console.error(error))
 })
 
 
