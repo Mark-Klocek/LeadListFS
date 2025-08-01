@@ -42,7 +42,15 @@ app.post('/addBusiness',(request,response)=>{
     .catch(error => console.error(error))
 })
 
-
+app.delete('/deleteBusiness',(request,response)=>{
+    db.collection('1').deleteOne({'Business Phone': Number(request.body.itemFromJS)})
+    .then(result =>{
+        console.log(request.body.itemFromJS)
+        console.log('Business Deleted')
+        response.json('Business Deleted')
+    })
+    .catch(error => console.error(error))
+})
 
 
 //connect to db and start app

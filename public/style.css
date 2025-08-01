@@ -69,6 +69,7 @@ footer {
   z-index: 1;
   background-color: grey;
   padding: 2px;
+  pointer-events: none;
 }
 .tooltip:hover .toolTipText{
   visibility: visible;
