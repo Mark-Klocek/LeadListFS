@@ -63,3 +63,13 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.toolTipText{
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  background-color: grey;
+  padding: 2px;
+}
+.tooltip:hover .toolTipText{
+  visibility: visible;
+}
