@@ -27,15 +27,16 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+
   
 }
 
 #listingsBox{
-  height: 100%;
+ 
   max-width: 75%;
-  
+  background-color: rgb(152, 222, 250);
   display: flex;
   
   justify-content: center;
