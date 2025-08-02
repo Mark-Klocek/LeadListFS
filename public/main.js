@@ -1,14 +1,16 @@
 const deleteButton = document.querySelectorAll('.fa-trash')
-const editButton = document.querySelectorAll('.fa-pen')
-
+const editWindowButton = document.querySelectorAll('.fa-pen')
+const editButton = document.querySelectorAll('.editButton')
 
 Array.from(deleteButton).forEach((element)=>{
     element.addEventListener('click', deleteBusiness)
 })
-Array.from(editButton).forEach(element =>{
+Array.from(editWindowButton).forEach(element =>{
     element.addEventListener('click',editWindow)
 })
-
+Array.from(editButton).forEach(element=>{
+    element.addEventListener('click',updateBusiness)
+})
 
 
 
@@ -42,4 +44,30 @@ function editWindow(){
     })
     this.childNodes[2].style.visibility = 'visible'
     
+}
+
+async function updateBusiness(){
+    const originalNumber = this.parentNode.parentNode.parentNode.parentNode.parentNode.childNodes[5].innerText
+    const updatedName = this.parentNode.childNodes[1].value
+    const updatedNumber = this.parentNode.childNodes[3].value
+    const updatedAddress = this.parentNode.childNodes[5].value
+    try{
+        const response = await fetch('updateBusiness',
+            {
+                method: 'post',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    'originalNumber' : originalNumber,
+                    'updatedName': updatedName,
+                    'updatedNumber': updatedNumber,
+                    'updatedAddress': updatedAddress
+                })
+                
+            })
+        const data = await response.json()
+        //console.log(data)
+        location.reload()
+    }catch(error){
+        console.error(error)
+    }
 }

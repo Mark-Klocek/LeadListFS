@@ -43,7 +43,18 @@
 						<td><%= businesses[i]['Business Address'] %></td>
 						<td>
 							<div class="fa fa-pen tooltip"><span class="toolTipText">Edit</span>
-						<div class="editWindow">Edit Window</div></div></td>
+							<div class="editWindow">
+								<span>Update <%= businesses[i]['Business Name'] %> information below.</span>
+									<div class="updateForm">
+										<input type="text" placeholder="business name" name="_businessName">
+										<input type="number" placeholder="phone number" name="_businessPhone">
+										<input type="text" placeholder="business address" name="_businessAddress">
+										<button type="button" class="editButton" >Edit</button>
+									</div>
+									
+								
+							</div></div>
+						</td>
 						<td><div class='fa fa-trash tooltip'><span class="toolTipText">Delete</span></div></td>
 						
 

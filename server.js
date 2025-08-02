@@ -52,6 +52,25 @@ app.delete('/deleteBusiness',(request,response)=>{
     .catch(error => console.error(error))
 })
 
+app.post('/updateBusiness',(request,response)=>{
+    const originalNumber = Number(request.body.originalNumber)
+    console.log(typeof(originalNumber))
+    db.collection('1').updateOne({'Business Phone': originalNumber},{
+        $set:{
+            'Business Name': request.body.updatedName,
+            'Business Phone': Number(request.body.updatedNumber),
+            'Business Address': request.body.updatedAddress
+        }
+    },{
+        upsert: false
+    })
+    .then(result =>{
+        console.log('Listing updated')
+        response.json('Listing updated')
+    })
+    .catch(error => console.error(error))
+    
+})
 
 //connect to db and start app
 MongoClient.connect(connectString)

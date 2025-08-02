@@ -29,6 +29,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 #listingsBox{
@@ -44,7 +45,9 @@ th, td {
   
 }
 table{
-  display: flex;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 ul{
   list-style: none;
@@ -81,7 +84,11 @@ footer {
   height: 25%;
   width: 50%;
   background-color: grey;
-  transform: translate(-110%, -20%);
+  transform: translate(-110%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   
 
 }
