@@ -29,15 +29,15 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  
 }
 
 #listingsBox{
-  max-height: 1200px;
+  height: 100%;
   max-width: 75%;
   
   display: flex;
-  overflow: scroll;
+  
   justify-content: center;
 }
 th, td {
